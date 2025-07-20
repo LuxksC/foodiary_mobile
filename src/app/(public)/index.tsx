@@ -30,7 +30,7 @@ export default function SignIn() {
 
               <View className="mt-[30px] flex-row items-center gap-2 justify-center">
                 <Text className="text-white font-sans-regular text-base">Já tem conta?</Text>
-                <Link href="/signin">
+                <Link href="/signup">
                   <Text className="text-lime-500 font-sans-medium text-base">
                     Acesse agora!
                   </Text>

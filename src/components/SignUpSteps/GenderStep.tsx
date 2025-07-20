@@ -1,9 +1,32 @@
-import { Text } from 'react-native';
+import { Controller, useFormContext } from 'react-hook-form';
+import { OptionsSelector } from '../OptionsSelector';
+import type { SignUpFormData } from './signUpSchema';
 
 export function GenderStep() {
+  const form = useFormContext<SignUpFormData>();
+
   return (
-    <Text>
-      Gender Step
-    </Text>
+    <Controller
+      control={form.control}
+      name="gender"
+      render={({ field }) => (
+        <OptionsSelector
+          value={field.value}
+          onChange={field.onChange}
+          options={[
+            {
+              icon: '👩',
+              title: 'Feminino',
+              value: 'female',
+            },
+            {
+              icon: '👨',
+              title: 'Masculino',
+              value: 'male',
+            },
+          ]}
+        />
+      )}
+    />
   );
 }
