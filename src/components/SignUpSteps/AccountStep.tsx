@@ -10,6 +10,19 @@ export function AccountStep() {
     <View className="gap-4">
       <Controller
         control={form.control}
+        name="name"
+        render={({ field, fieldState }) => (
+          <Input
+            label="Nome"
+            placeholder="Digite seu nome"
+            value={field.value}
+            onChangeText={field.onChange}
+            error={fieldState.error?.message}
+          />
+        )}
+      />
+      <Controller
+        control={form.control}
         name="email"
         render={({ field, fieldState }) => (
           <Input
